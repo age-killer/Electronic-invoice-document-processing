@@ -1,5 +1,7 @@
 #!/bin/bash
 
+username="$(id -u -n)"
+
 mkdir -p /home/$username/workfolder/OutputInvoices
 mkdir -p /home/$username/workfolder/OutputInvoices/e5FU
 mkdir -p /home/$username/workfolder/OutputInvoices/e5SE
