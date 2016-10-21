@@ -16,7 +16,7 @@ This project is licensed under the MIT license, therefore is free to use, distri
 1) OS - basically any Linux distro is suitable, but my tests showed that openSUSE provides better font rendering than Debian/Ubuntu (due to tight deadlines I did not have the time to investigate why). Due to clients' infrastructure 
 currently 32 bit version is being deployed, but in general the OS architecture is not of importance. Due to its LTS openSUSE 13.1 is being used.
 
-2) Required software: 
+2) Required software: \n
 2.1) GhostScript, GhostScript fonts - currently version 9.19 is being deployed, no plans for upgrade at this point
 2.2) ImageMagick - currently used version 6.9.3 - Q16
 2.3) GraphicsMagick - currently used version 1.3.20
