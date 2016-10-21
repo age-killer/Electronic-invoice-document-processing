@@ -17,12 +17,12 @@ This project is licensed under the MIT license, therefore is free to use, distri
 currently 32 bit version is being deployed, but in general the OS architecture is not of importance. Due to its LTS openSUSE 13.1 is being used.
 
 2) Required software:
-  2.1) GhostScript, GhostScript fonts - currently version 9.19 is being deployed, no plans for upgrade at this point
-  2.2) ImageMagick - currently used version 6.9.3 - Q16
-  2.3) GraphicsMagick - currently used version 1.3.20
-  2.4) libtiff5 -  currently used version 4.06
-  2.5) JPEG -  currently used version libjpeg62 - 62.2.0; libjpeg8 - 8.1.2; libjpeg-turbo - 1.5.0
-  2.6) mingetty -  currently used version 1.0.8s
+2.1) GhostScript, GhostScript fonts - currently version 9.19 is being deployed, no plans for upgrade at this point
+2.2) ImageMagick - currently used version 6.9.3 - Q16
+2.3) GraphicsMagick - currently used version 1.3.20
+2.4) libtiff5 -  currently used version 4.06
+2.5) JPEG -  currently used version libjpeg62 - 62.2.0; libjpeg8 - 8.1.2; libjpeg-turbo - 1.5.0
+2.6) mingetty -  currently used version 1.0.8s
 
 ######### ENVIRENMONT #########
 1) Set the VM to see the shared folders and make sure it has full read and write access
