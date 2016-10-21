@@ -9,7 +9,7 @@ in order to ensure that the output of the processing will be readable and not ar
 
 ######### LICENSE #########
 
-This project is licensed under the MIT license, therefore is free to use, distribute and modify according to the user's needs. For more information chek the MIT_License.txt file.
+This project is licensed under the MIT license, therefore is free to use, distribute and modify according to the user's needs. For more information chek the License file.
 
 
 ######### INSTALLATION #########
