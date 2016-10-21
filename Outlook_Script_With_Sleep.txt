@@ -1,0 +1,199 @@
+Public WithEvents myInboxMailItem As Outlook.Application
+Private Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
+ 
+ 'Check mails for attachments and save them
+Sub Initialize_Handler()
+  Set myInboxMailItem = Outlook.Application
+  End Sub
+
+ 'Check for new mails, every 1 minute
+Private Sub Application_Startup()
+   Dim currenttime As Date
+   currenttime = Now
+   Do Until currenttime + TimeValue("00:01:00") <= Now
+   Loop
+   Call Initialize_Handler
+End Sub
+
+
+Private Sub Application_NewMail()
+   Call Initialize_Handler
+End Sub
+
+'Check mails for attachments and save them
+Private Sub myInboxMailItem_NewMail()
+ Dim fldInbox As Outlook.MAPIFolder
+ Dim gnspNameSpace As Outlook.NameSpace
+ Dim myRecipient As Outlook.Recipient
+ Dim itm As Object
+ Dim readItm As Object
+ Dim objAtt As Attachment
+ Dim saveFolder
+ Dim tmpFullName
+ Dim tmpNameNoExt
+ Dim finName
+ Dim dateFormat
+ 
+'Define the Arrays for the group e-mail addresses
+
+Dim myArray_e5SE As Variant
+Dim myArray_e5FU As Variant
+Dim myArray_e5AS As Variant
+Dim myArray_e5IT As Variant
+Dim myArray_e5MA As Variant
+Dim myArray_e5OT As Variant
+Dim myArray_e5SH As Variant
+Dim myArray_e5UT As Variant
+
+'Define the variables for the invoice.txt file
+Dim f
+f = FreeFile
+
+'Define the output folder for the project. This value should be changed with MAP folder to File Server
+saveFolder = "Specify the folder to which the attachments will be saved here"
+
+'Input array values for the group e-mail addresses. Use commas to separate the addresses and replace "b" and "c"
+myArray_e5SE = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5FU = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5AS = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5IT = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5MA = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5OT = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5SH = Array("Enter the customer e-mail address", "b", "c")
+myArray_e5UT = Array("Enter the customer e-mail address", "b", "c")
+
+'Define the date format to appended at the end of the original file name
+dateFormat = Format(Now, "mmdd H-mm")
+
+'Initialise the e-mail address and Inbox
+Set gnspNameSpace = Application.GetNamespace("MAPI") 'Outlook Object
+Set myRecipient = gnspNameSpace.CreateRecipient("Enter the recipient e-mail address")
+Set fldInbox = gnspNameSpace.GetSharedDefaultFolder _
+                                    (myRecipient, olFolderInbox)
+ 
+'Define variables for moving the processed mails
+'Set processedFldr = fldInbox.Folders("Processed")
+
+' MsgBox "Initialize Handler Executed."
+'Check for new mails and extract attachments, then set the mails to read
+For Each itm In fldInbox.Items
+  With itm
+   If .UnRead = True Then
+   For Each objAtt In itm.Attachments
+  '        MsgBox "test "
+        If IsInArray(itm.SenderEmailAddress, myArray_e5SE) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5SE" & "\" & finName
+        .UnRead = False
+        objAtt.SaveAsFile saveFolder & "e5SE" & "\" & "invoice.txt"
+        End If
+
+
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5FU) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5FU" & "\" & finName
+       .UnRead = False
+       objAtt.SaveAsFile saveFolder & "e5FU" & "\" & "invoice.txt"
+       End If
+
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5AS) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5AS" & "\" & finName
+        .UnRead = False
+        objAtt.SaveAsFile saveFolder & "e5AS" & "\" & "invoice.txt"
+        End If
+
+        
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5IT) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5IT" & "\" & finName
+       .UnRead = False
+       objAtt.SaveAsFile saveFolder & "e5IT" & "\" & "invoice.txt"
+       End If
+        
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5MA) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5MA" & "\" & finName
+       .UnRead = False
+       objAtt.SaveAsFile saveFolder & "e5MA" & "\" & "invoice.txt"
+       End If
+        
+
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5OT) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5OT" & "\" & finName
+       .UnRead = False
+        objAtt.SaveAsFile saveFolder & "e5OT" & "\" & "invoice.txt"
+        End If
+        
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5SH) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5SH" & "\" & finName
+        .UnRead = False
+        objAtt.SaveAsFile saveFolder & "e5SH" & "\" & "invoice.txt"
+        End If
+      
+                
+        ElseIf IsInArray(itm.SenderEmailAddress, myArray_e5UT) = True Then
+        If UCase(Right(objAtt, 3)) = "PDF" Then
+        tmpFullName = objAtt.DisplayName
+        Count = InStrRev(tmpFullName, ".")
+        tmpNameNoExt = Left(tmpFullName, Count - 1)
+        finName = Replace(tmpNameNoExt, " ", "", 1, -1) & ".pdf"
+        objAtt.SaveAsFile saveFolder & "e5UT" & "\" & finName
+        .UnRead = False
+        objAtt.SaveAsFile saveFolder & "e5UT" & "\" & "invoice.txt"
+        End If
+       
+        End If
+      Next objAtt
+       
+     End If
+       
+  ' Else
+    'Loop through the unread mails and move them to another folder
+   ' For Each readItm In fldInbox.Items
+    ' readItm.Move processedFldr
+    ' Next readItm
+     
+ End With
+ Next itm
+
+Set objAtt = Nothing
+ End Sub
+ 
+'Compares the values of the string and string massive values
+Function IsInArray(stringToBeFound As String, arr As Variant) As Boolean
+  IsInArray = UBound(Filter(arr, stringToBeFound)) > -1
+End Function
+
+
+
