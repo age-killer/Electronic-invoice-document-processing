@@ -1,0 +1,13 @@
+﻿<Properties StartupConfiguration="{DAB474D9-0E15-41AC-A449-3D99F2928FCB}|Default">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.MailSort__GIT PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workbench ActiveDocument="MailSort_GIT\Program_GIT.cs">
+    <Files>
+      <File FileName="MailSort_GIT\Program_GIT.cs" Line="367" Column="5" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+</Properties>
