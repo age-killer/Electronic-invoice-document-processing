@@ -13,8 +13,7 @@ This project is licensed under the MIT license, therefore is free to use, distri
 
 
 ######### INSTALLATION #########
-1) OS - basically any Linux distro is suitable, but my tests showed that openSUSE provides better font rendering than Debian/Ubuntu (due to tight deadlines I did not have the time to investigate why). Due to clients' infrastructure 
-currently 32 bit version is being deployed, but in general the OS architecture is not of importance. Due to its LTS openSUSE 13.1 is being used.
+1) OS - basically any Linux distro is suitable, but my tests showed that openSUSE provides better font rendering than Debian/Ubuntu (due to tight deadlines I did not have the time to investigate why).
 
 2) Required software:
 
@@ -34,9 +33,13 @@ currently 32 bit version is being deployed, but in general the OS architecture i
 1) Set the VM to see the shared folders and make sure it has full read and write access
 2) Set the VM's NAT to point to the SSH daemon for troubleshooting
 3) Set mgetty to autologin (on openSUSE edit /etc/systemd/system/getty.target.wants/getty@tty1.service and edit the line ExecStart=-/sbin/agetty --autologin scanpot --noclear %I $TERM)
-5) Copy the folders.sh, instanceV6_MIFF.sh and variables.incl in the HOME folder and run the folders.sh script to recreate the internal folders used for the processing and to copy the scripts to the newly created workfolder
-6) Set the instanceV6_MIFF.sh script to start at user's login
-7) Copy the contents of Outlook_Script_With_Sleep.txt to the operator's Outlook VBA console and restart Outlook
+5) Copy the folders.sh, instanceV7_MIFF.sh and variables.incl in the HOME folder and run the folders.sh script to recreate the internal folders used for the processing and to copy the scripts to the newly created workfolder
+6) Set the instanceV7_MIFF.sh script to start at user's login
+
+######### Mails sorting ##################
+I re-did the Outlook macro in C#, because the macro is running heavy and is slowing down Outlook (sometimes rendering it useless for 1-2 minutes). Using .NET with Exchange Web Services proved to be a lot lighter, faster and more efficient (it takes around 80 KB of RAM when it's running.)
+If you still would like to use the macro - copy the contents of Outlook_Script_With_Sleep.txt to the operator's Outlook VBA console and restart Outlook, don't forget to allow macros in Outlook's security settings.
+
 
 ######### Bar-code Generation #########
 I used Zint (https://sourceforge.net/projects/zint/) to generate the needed bar-codes, there are lots of FOSS solutions to do this.
