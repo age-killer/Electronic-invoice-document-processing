@@ -1,0 +1,6 @@
+C:\Users\user\Desktop\Electronic-invoice-document-processing\MailSort_CSHARP\MailSort_GIT\bin\Debug\MailSort_GIT.exe
+C:\Users\user\Desktop\Electronic-invoice-document-processing\MailSort_CSHARP\MailSort_GIT\bin\Debug\MailSort_GIT.pdb
+C:\Users\user\Desktop\Electronic-invoice-document-processing\MailSort_CSHARP\MailSort_GIT\bin\Debug\EWSCore.dll
+C:\Users\user\Desktop\Electronic-invoice-document-processing\MailSort_CSHARP\MailSort_GIT\obj\Debug\MailSort_GIT.csprojResolveAssemblyReference.cache
+C:\Users\user\Desktop\Electronic-invoice-document-processing\MailSort_CSHARP\MailSort_GIT\obj\Debug\MailSort_GIT.exe
+C:\Users\user\Desktop\Electronic-invoice-document-processing\MailSort_CSHARP\MailSort_GIT\obj\Debug\MailSort_GIT.pdb

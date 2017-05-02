@@ -569,8 +569,10 @@ namespace MailSort
             else {
             	
             	Console.WriteLine("No new invoices.");
+            	Console.ReadLine();
             }
-              Console.ReadLine();
+              
         }
+            Console.ReadLine();
     }
 	}}
